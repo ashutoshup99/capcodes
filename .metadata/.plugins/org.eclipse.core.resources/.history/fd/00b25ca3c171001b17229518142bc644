@@ -1,0 +1,52 @@
+package com.cap.pwt;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestWorkoutRepository {
+
+	WorkoutRepository workoutRepository;
+	
+	@Before
+	public void setUp() {
+		workoutRepository = new WorkoutRepository();
+	}
+//	@Test
+//	public void testDeleteWorkout() {
+//		workoutRepository.deleteWorkout(1);
+//	}
+//	@Test
+//	public void testDeleteCategory() {
+//		workoutRepository.deleteCategory(1);
+//	}
+	@Test
+	public void testFindWorkoutsByCategoryName() {
+		List<Workout> workouts = workoutRepository.findallWorkoutInCategoryByName("Core");
+		System.out.println(workouts);
+	}
+	@Test
+	public void testupdateWorkoutcbpm() {
+		workoutRepository.updateWorkoutcbpm(1, 654);
+	}
+	@Test
+	public void testupdateWorkouttTitle() {
+		workoutRepository.updateWorkouttTitle(1, "New title");
+	}
+	
+
+	@Test
+	public void testAddWorkout() {
+		Category category = new Category("Core");
+		Workout workout = new Workout("plank  Workout", category, 90, "Healthy");
+		
+//		workoutRepository.addWorkout(workout);
+//		Category s=workoutRepository.findCategoryByName("Core");
+//		System.out.println(s);
+		List<Workout> l=workoutRepository.findallWorkoutInCategoryByName("Core");
+		System.out.println(l);
+	}
+	
+	
+}

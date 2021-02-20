@@ -1,0 +1,31 @@
+package com.cap.pwt;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestWorkoutRepository {
+
+	WorkoutRepository workoutRepository;
+	
+	@Before
+	public void setUp() {
+		workoutRepository = new WorkoutRepository();
+	}
+
+	@Test
+	public void testAddWorkout() {
+		Category category = new Category("Core");
+		String title, Category category, int caloriesBurntPerMinute,String note
+		Workout workout = new Workout("plank  Workout", category, 90, "Healthy");
+		
+//		workoutRepository.addWorkout(workout);
+//		Category s=workoutRepository.findCategoryByName("Core");
+//		System.out.println(s);
+		List<Workout> l=workoutRepository.findallWorkoutInCategoryByName("Core");
+		System.out.println(l);
+	}
+	
+	
+}

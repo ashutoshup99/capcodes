@@ -1,0 +1,44 @@
+package com.cap.pra;
+import javax.persistence.Entity;
+import javax.persistence.*; 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Person {
+
+		@Id
+		private int id;
+		private String perFirstName;
+		private String perLastName;
+		public int getId() {
+			return id;
+		}
+		public void setId(int id) {
+			this.id = id;
+		}
+		public String getPerFirstName() {
+			return perFirstName;
+		}
+		public void setPerFirstName(String perFirstName) {
+			this.perFirstName = perFirstName;
+		}
+		public String getPerLastName() {
+			return perLastName;
+		}
+		public void setPerLastName(String perLastName) {
+			this.perLastName = perLastName;
+		}
+		public Person() {
+			
+		}
+		
+		public Person(int id, String perFirstName, String perLastName) {
+			super();
+			this.id = id;
+			this.perFirstName = perFirstName;
+			this.perLastName = perLastName;
+		}
+		
+}

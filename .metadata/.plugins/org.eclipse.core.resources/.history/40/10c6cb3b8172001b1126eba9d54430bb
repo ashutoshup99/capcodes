@@ -1,0 +1,100 @@
+package com.cap.pwt;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.cap.pwt.entities.Category;
+import com.cap.pwt.entities.Userg;
+import com.cap.pwt.entities.Workout;
+import com.cap.pwt.repos.UserRepository;
+import com.cap.pwt.repos.WorkoutRepository;
+
+public class TestWorkoutRepository {
+
+	WorkoutRepository workoutRepository;
+	
+	@Before
+	public void setUp() {
+		workoutRepository = new WorkoutRepository();
+	}
+//	@Test
+//	public void assignWorkoutToUser() {
+//		String workoutTitle = "dead bug  Workout";
+//		String email = "test@test.com";
+//		workoutRepository.assignWorkoutToUser(email, workoutTitle);
+//	}
+//	@Test
+//	public void testDeleteWorkout() {
+//		workoutRepository.deleteWorkout(1);
+//	}
+//	@Test
+//	public void testDeleteCategory() {
+//		workoutRepository.deleteCategory(11);
+//	}
+//	@Test
+//	public void testFindWorkoutsByCategoryName() {
+//		List<Workout> workouts = workoutRepository.findallWorkoutInCategoryByName("Core");
+//		System.out.println(workouts);
+//	}
+//	@Test
+//	public void testupdateWorkoutcbpm() {
+//		workoutRepository.updateWorkoutcbpm(1, 654);
+//	}
+//	@Test
+//	public void testupdateWorkouttTitle() {
+//		workoutRepository.updateWorkouttTitle(1, "New title");
+//	}
+//	@Test
+//	public void testfindallWorkoutInCategoryByName() {
+//		List<Workout> l=workoutRepository.findallWorkoutInCategoryByName("Core");
+//		System.out.println(l);
+//	}
+//	@Test
+//	public void testfindAllCategory() {
+//		List<Category> l=workoutRepository.findAllCategory();
+//		System.out.println(l);
+//	}
+//	
+//	@Test
+//	public void testfindCategory() {
+//		Category l=workoutRepository.findCategory(2);
+//		System.out.println(l);
+//	}
+//	@Test
+//	public void testeditCategory() {
+//		workoutRepository.editCategory(2,"CORE");
+//	}
+//	@Test
+//	public void testaddCategory() {
+//		workoutRepository.addCategory(new Category("new category"));
+//	}
+	
+	
+
+	@Test
+	public void testAddWorkout() {
+		Category category = new Category("Core");
+		Workout workout = new Workout("dead bug  Workout", category, 70, "strong");
+		
+		workoutRepository.addWorkout(workout);
+//		Category s=workoutRepository.findCategoryByName("Core");
+//		System.out.println(s);
+//		List<Workout> l=workoutRepository.findallWorkoutInCategoryByName("Core");
+//		System.out.println(l);
+	}
+//	@Test
+//	public void testStartActiveWorkout() {
+//		int id = 5;
+//		workoutRepository.testStartActiveWorkout(id);
+//	}
+//	@Test
+//	public void addUser() {
+//		Userg user  = new Userg("test@test.com", "test");
+//		UserRepository repository = new  UserRepository();
+//		repository.addUser(user);
+//	}
+	
+	
+}

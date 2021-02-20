@@ -1,0 +1,24 @@
+package com.cap.pwt;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class TestWorkoutRepository {
+
+	WorkoutRepository workoutRepository;
+	
+	@Before
+	public void setUp() {
+		workoutRepository = new WorkoutRepository();
+	}
+
+	@Test
+	public void testAddWorkout() {
+		Category category = new Category("Core");
+		Workout workout = new Workout("plank  Workout", category, 90);
+		
+		workoutRepository.addWorkout(workout);
+	}
+	
+	
+}

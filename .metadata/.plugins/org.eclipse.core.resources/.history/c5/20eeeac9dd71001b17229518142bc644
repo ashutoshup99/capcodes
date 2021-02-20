@@ -1,0 +1,5 @@
+package com.cap.pwt.repos;
+
+public class CategoryRepository {
+
+}

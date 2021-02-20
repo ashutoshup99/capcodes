@@ -1,0 +1,5 @@
+package com.cap.entities.inherit;
+
+public class Employee {
+
+}

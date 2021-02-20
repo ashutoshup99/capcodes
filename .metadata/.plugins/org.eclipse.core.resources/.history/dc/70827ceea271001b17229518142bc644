@@ -1,0 +1,96 @@
+package com.cap.pwt;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import com.cap.entities.inherit.Employee;
+public class WorkoutRepository {
+	/* Create EntityManagerFactory */
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("capdbjpa");
+
+	
+	/* Create EntityManager */
+	EntityManager em = emf.createEntityManager();
+	
+	public Category findCategoryByName(String name) throws NoResultException {
+		TypedQuery<Category> query = em.createQuery("select c from Category c where c.name = :name", Category.class);
+		query.setParameter("name", name);
+		return query.getSingleResult();
+	}
+	public List<Workout> findallWorkoutInCategoryByName(String name) {
+		Category c=findCategoryByName(name);
+		TypedQuery<Workout> query = em.createQuery("select c from Workout c where c.category.id=:id", Workout.class);
+		query.setParameter("id", c.id); 
+		return query.getResultList();
+	}
+	public Workout findWorkout(int id) {
+		return em.find(Workout.class, id);
+	}
+	
+	public void deleteWorkout(int id) {
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Workout workout=findWorkout(id);
+		em.remove(workout);
+		tx.commit();
+	}
+	
+	public void addWorkout(Workout workout) {
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		
+		// mapping existing category to workout
+		try {
+			Category category = this.findCategoryByName(workout.getCategory().name);
+			if(category != null) {
+				workout.setCategory(category);
+			}
+		}
+		catch(NoResultException e) {
+			e.printStackTrace();
+		}
+
+		em.persist(workout);
+		tx.commit();
+	}
+	public void addCategory(Category c) {
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		em.persist(c);
+		tx.commit();
+	}
+	public void updateWorkoutNote(int id,String n) {
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Workout c=em.find(Workout.class,id);
+		c.setNote(n);
+		tx.commit();
+	}
+	public void updateWorkoutcbpm(int id,int s) {
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Workout c=em.find(Workout.class,id);
+		c.setCaloriesBurntPerMinute(s);
+		tx.commit();
+	}
+	public void updateWorkouttTitle(int id,String s) {
+		EntityTransaction tx = em.getTransaction();
+		tx.begin();
+		Workout c=em.find(Workout.class,id);
+		c.setTitle(s);
+		tx.commit();
+	}
+	// find all workouts inside a specific category
+	
+		// delete a specific workout but .. do not delete the category itself
+		
+		//	 add, findAll, edit(change name) and delete a category 
+		
+		// update workout -- change title, note, cbpm
+}
