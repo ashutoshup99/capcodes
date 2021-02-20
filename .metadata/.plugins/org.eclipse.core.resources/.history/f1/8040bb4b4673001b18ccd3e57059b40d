@@ -1,0 +1,22 @@
+package com.cap.pra;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import com.cap.repost.AddressRepository;
+import com.cap.repost.PersonRepository;
+
+public class TestPerAdd {
+
+	PersonRepository pr;
+	AddressRepository ar;
+
+	@Before
+	public void setUp() {
+		pr = new PersonRepository();
+		ar = new AddressRepository(); 
+	}
+
+}

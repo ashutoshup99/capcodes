@@ -1,0 +1,19 @@
+package com.cap.repost;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.cap.pra.Person;
+
+public class PersonRepository {
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("capdbjpa");
+
+	EntityManager em = emf.createEntityManager();
+	public void findPer(int id) {
+		Person p=em.find(Person.class, id);
+		System.out.println(p);
+	}
+	
+
+}

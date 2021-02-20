@@ -23,10 +23,8 @@ INDEX VERSION 1.131+C:\Users\HP\eclipse-workspace\.metadata\.plugins\org.eclipse
 2834072685.index
 1450080117.index
 3449189828.index
-2713591154.index
 2095943104.index
 4269891551.index
-122214181.index
 2161144612.index
 195339386.index
 2606080199.index

@@ -1,0 +1,55 @@
+package com.cap.pra;
+import javax.persistence.Entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.*; 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.Cascade;
+
+@Entity
+public class Person {
+
+		@Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
+		private int id;
+		private String perFirstName;
+		private String perLastName;
+		
+		@OneToOne
+		private Address address;
+		
+//		public int getId() {
+//			return id;
+//		}
+//		public void setId(int id) {
+//			this.id = id;
+//		}
+		public String getPerFirstName() {
+			return perFirstName;
+		}
+		public void setPerFirstName(String perFirstName) {
+			this.perFirstName = perFirstName;
+		}
+		public String getPerLastName() {
+			return perLastName;
+		}
+		public void setPerLastName(String perLastName) {
+			this.perLastName = perLastName;
+		}
+		public Person() {
+			
+		}
+		
+		public Person(String perFirstName, String perLastName) {
+			super();
+//			this.id = id;
+			this.perFirstName = perFirstName;
+			this.perLastName = perLastName;
+		}
+		
+}

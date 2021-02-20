@@ -1,49 +1,57 @@
 package com.cap.pra;
-import javax.persistence.Entity;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.*; 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import org.hibernate.annotations.Cascade;
 
 @Entity
 public class Person {
 
 		@Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
 		private int id;
-		private String perFirstName;
-		private String perLastName;
+		private String name;
 		
-		public int getId() {
-			return id;
+		@OneToOne(cascade = CascadeType.ALL)
+		private Address address;
+		
+		public Address getAddress() {
+			return address;
 		}
-		public void setId(int id) {
-			this.id = id;
+		public void setAddress(Address address) {
+			this.address = address;
 		}
-		public String getPerFirstName() {
-			return perFirstName;
-		}
-		public void setPerFirstName(String perFirstName) {
-			this.perFirstName = perFirstName;
-		}
-		public String getPerLastName() {
-			return perLastName;
-		}
-		public void setPerLastName(String perLastName) {
-			this.perLastName = perLastName;
-		}
+		//		public int getId() {
+//			return id;
+//		}
+//		public void setId(int id) {
+//			this.id = id;
+//		}
+		
+		
 		public Person() {
 			
 		}
 		
-		public Person(int id, String perFirstName, String perLastName) {
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public Person(String name,Address address) {
 			super();
-			this.id = id;
-			this.perFirstName = perFirstName;
-			this.perLastName = perLastName;
+//			this.id = id;
+//			this.perFirstName = perFirstName;
+			this.name = name;
+			this.address=address;
+		}
+		@Override
+		public String toString() {
+			return "Person [id=" + id + ", name=" + name + ", address="
+					+ address + "]";
 		}
 		
 }
