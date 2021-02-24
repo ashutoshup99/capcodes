@@ -15,9 +15,19 @@ public class TestDeps {
 		
 		System.out.println(" _ ___ __------- ___ __ _");
 		
+//		WorkoutRepository  workoutRepository = context.getBean(WorkoutRepository.class);
+//		workoutRepository.assignWorkoutToUser();
 		WorkoutRepository  workoutRepository = context.getBean(WorkoutRepository.class);
-		workoutRepository.assignWorkoutToUser();
+		WorkoutRepository  workoutRepository2 = context.getBean(WorkoutRepository.class);
 		
+		if(workoutRepository == workoutRepository2) {
+			System.out.println("Single object");
+		}
+		else {
+			System.out.println("different object");
+		}
+		
+		workoutRepository.assignWorkoutToUser();
 //		b = new B1();
 //		a = new A(b);
 //		a.execute();

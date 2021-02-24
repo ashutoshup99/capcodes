@@ -6,6 +6,7 @@
 	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\HP\eclipse-workspace\hello"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -47,12 +48,18 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.cap"/>
+			<item value="com.pra"/>
 			<item value="com.csp"/>
 			<item value="com.cap.jpademo"/>
 		</list>
 		<list key="name">
+			<item value="cap-spring"/>
 		</list>
 		<list key="artifactId">
+			<item value="cap-spring-jpa"/>
+			<item value="cap-spring"/>
+			<item value="mav-map"/>
 			<item value="mav-j"/>
 			<item value="mav-jpa"/>
 		</list>
@@ -66,6 +73,19 @@
 		</list>
 		<list key="version">
 			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\HP\eclipse-workspace\com-cap-spring-web-jpa"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
 		</list>
 	</section>
 </section>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestPerAdd" project="mav-map" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cap.pra.TestPerAdd" time="7.101">
-    <testcase name="testfindperByName" classname="com.cap.pra.TestPerAdd" time="5.109"/>
-    <testcase name="testfindAllPer" classname="com.cap.pra.TestPerAdd" time="1.992"/>
-  </testsuite>
-</testrun>

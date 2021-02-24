@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestPerAdd" project="mav-map" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.cap.pra.TestPerAdd" time="4.452">
-    <testcase name="testaddPrson" classname="com.cap.pra.TestPerAdd" time="4.452"/>
-  </testsuite>
-</testrun>
